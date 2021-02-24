@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "869054310721",
+    "project_id": "unishare-fbdc1",
+    "storage_bucket": "unishare-fbdc1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869054310721:android:f189029818b96c9c57d9c0",
+        "android_client_info": {
+          "package_name": "com.example.unishare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869054310721-8abhkml7b5pr9pgbrpl1a0eiq4ofhtk1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.unishare",
+            "certificate_hash": "27db81893532ff31bec4a1c7d9c3dd74f7068eeb"
+          }
+        },
+        {
+          "client_id": "869054310721-kjphm2ktnkn6qenvj46753uq7vmpb9qf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvQvd1E_sTDizRyHEeBaFA_UOY5vHYCQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869054310721-kjphm2ktnkn6qenvj46753uq7vmpb9qf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
