@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/signInEmail"
         android:layout_width="234dp"
         android:layout_height="50dp"
         android:layout_marginTop="44dp"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/signInPassword"
         android:layout_width="237dp"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
@@ -49,10 +49,10 @@
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/signInEmail" />
 
     <Button
-        android:id="@+id/emailSignIn"
+        android:id="@+id/signInButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
@@ -62,7 +62,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/signInPassword"
+        />
 
     <Button
         android:id="@+id/googleSignIn"
@@ -75,23 +76,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailSignIn" />
+        app:layout_constraintTop_toBottomOf="@+id/signInButton" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="75dp"
-        android:src="draw" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="264dp"
-        android:layout_height="94dp"
-        app:srcCompat="@drawable/logo1"
-        tools:layout_editor_absoluteX="73dp"
-        tools:layout_editor_absoluteY="103dp" />
+        android:src="@drawable/logo1"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
