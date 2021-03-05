@@ -23,12 +23,12 @@
 
     <EditText
         android:id="@+id/signInEmail"
-        android:layout_width="234dp"
+        android:layout_width="235dp"
         android:layout_height="50dp"
         android:layout_marginTop="44dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="email"
+        android:hint="Enter email"
         android:inputType="textEmailAddress"
         android:textAllCaps="false"
         android:textColor="@color/colorAccent"
@@ -39,13 +39,14 @@
 
     <EditText
         android:id="@+id/signInPassword"
-        android:layout_width="237dp"
+        android:layout_width="235dp"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="password"
+        android:hint="Enter password"
         android:inputType="textPassword"
+        android:textAlignment="textStart"
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,24 +56,23 @@
         android:id="@+id/signInButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="68dp"
         android:backgroundTint="@color/white"
-        android:text="Login/Signup"
+        android:text="Login"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.244"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signInPassword"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/signInPassword" />
 
     <Button
         android:id="@+id/googleSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/purple_500"
         android:text="@string/fui_sign_in_with_google"
-        android:textColor="@android:color/black"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,6 +87,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="Register"
+        app:layout_constraintBottom_toTopOf="@+id/googleSignIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toEndOf="@+id/signInButton"
+        app:layout_constraintTop_toBottomOf="@+id/signInPassword"
+        app:layout_constraintVertical_bias="0.85" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
