@@ -14,7 +14,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "869054310721-8abhkml7b5pr9pgbrpl1a0eiq4ofhtk1.apps.googleusercontent.com",
+          "client_id": "869054310721-7l8mntd88a2sssm0tq5vvmckm3e0sqro.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.company.unishare",
@@ -22,7 +22,36 @@
           }
         },
         {
-          "client_id": "869054310721-kjphm2ktnkn6qenvj46753uq7vmpb9qf.apps.googleusercontent.com",
+          "client_id": "869054310721-7l8mntd88a2sssm0tq5vvmckm3e0sqro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvQvd1E_sTDizRyHEeBaFA_UOY5vHYCQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869054310721-7l8mntd88a2sssm0tq5vvmckm3e0sqro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869054310721:android:22accec8db240c9b57d9c0",
+        "android_client_info": {
+          "package_name": "com.example.unishare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869054310721-7l8mntd88a2sssm0tq5vvmckm3e0sqro.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
