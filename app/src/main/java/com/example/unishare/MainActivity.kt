@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -19,10 +20,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var signInButton: Button
     private lateinit var registerButton: Button
     private lateinit var googlesignInButton: Button
-
     private lateinit var auth: FirebaseAuth
 
-    public fun reload(){
+    // Configure Google Sign In
+
+
+    private fun reload(){
         val intent = Intent(this, Dashboard::class.java)
         startActivity(intent)
         finish()
@@ -42,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    reload();
+                    reload()
                 }
             }
     }
@@ -51,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    val user = auth.currentUser
+//                    val user = auth.currentUser
                     reload()
                 } else {
                     // If sign in fails, display a message to the user.
@@ -64,24 +67,29 @@ class MainActivity : AppCompatActivity() {
                 // ...
             }
     }
+
     public override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
         if(currentUser != null){
-            reload();
+            reload()
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
 
         // retrieving data from login form
         signInEmail = findViewById(R.id.signInEmail)
         signInPassword = findViewById(R.id.signInPassword)
         signInButton = findViewById(R.id.signInButton)
         registerButton = findViewById(R.id.registerButton)
-        googlesignInButton = findViewById(R.id.googleSignIn)
+
 
         // creating instance for firebase
         auth = Firebase.auth
@@ -98,9 +106,8 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             //  for signing up new users
-            signInUser(email,password);
+            signInUser(email,password)
         }
-
         registerButton.setOnClickListener {
             val email = signInEmail.text.toString()
             val password = signInPassword.text.toString()
@@ -113,9 +120,8 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             //  for signing up new users
-            createUser(email,password);
+            createUser(email,password)
         }
-
     }// onCreate
 }// class
 
