@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">UniSHARE</string>
     <string name="fui_sign_in_with_google">Login with Google</string>
+    <string name="login_signup_button_text">Login/Signup</string>
 </resources>
