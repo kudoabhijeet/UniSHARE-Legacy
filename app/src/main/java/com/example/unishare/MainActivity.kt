@@ -21,7 +21,6 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 
-
 class MainActivity : AppCompatActivity() {
     private lateinit var signInEmail: EditText
     private lateinit var signInPassword: EditText
@@ -47,6 +46,7 @@ class MainActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
 //                    Log.d(TAG, "signInWithCredential:success")
                     val user = auth.currentUser
+                    Toast.makeText(this, "Logged in as $user", Toast.LENGTH_SHORT).show()
                     reload()
                 } else {
                     // If sign in fails, display a message to the user.

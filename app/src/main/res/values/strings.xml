@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">UniSHARE</string>
-    <string name="fui_sign_in_with_google">Login with Google</string>
-    <string name="login_signup_button_text">Login/Signup</string>
-    <string name="title_activity_live_feed">LiveFeed</string>
+    <string name="title_activity_dashboard">Dashboard</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
