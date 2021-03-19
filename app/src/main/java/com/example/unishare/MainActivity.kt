@@ -60,8 +60,6 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-
-
     private fun createUser(email: String, password: String){
         auth?.createUserWithEmailAndPassword(email, password)
             ?.addOnCompleteListener(this) { task ->
