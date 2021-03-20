@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="228dp"
         android:text="Login/Signup"
-        android:textColor="@color/textColor"
+        android:textColor="@color/textWhite"
         android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="sans"
@@ -33,7 +33,6 @@
         android:textAllCaps="false"
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -79,7 +78,6 @@
         android:layout_centerVertical="true" />
 
         <ImageView
-            android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/logo1"
