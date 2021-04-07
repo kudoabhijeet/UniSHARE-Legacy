@@ -9,5 +9,9 @@
 
     <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splashscreen</item>
+    </style>
+
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
