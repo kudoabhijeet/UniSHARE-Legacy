@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.NonCancellable.start
 
 
 class MainActivity : AppCompatActivity() {
@@ -128,6 +129,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
     public override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
@@ -169,18 +171,9 @@ class MainActivity : AppCompatActivity() {
             signInUser(email,password)
         }
         registerButton.setOnClickListener {
-            val email = signInEmail.text.toString()
-            val password = signInPassword.text.toString()
-            if (TextUtils.isEmpty(email)) {
-                Toast.makeText(this, "Enter your mail address", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            if (TextUtils.isEmpty(password)) {
-                Toast.makeText(this, "Enter your password", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            //  for signing up new users
-            createUser(email,password)
+            val intent = Intent(this,Register::class.java)
+            startActivity(intent)
+            finish()
         }
         gsignin.setOnClickListener {
             signIn()
