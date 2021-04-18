@@ -2,5 +2,6 @@
 <resources>
     <color name="colorAccent">#2a2e35</color>
     <color name="textWhite">#FEFEFE</color>
+    <color name="r_green">#2a9d8f</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
