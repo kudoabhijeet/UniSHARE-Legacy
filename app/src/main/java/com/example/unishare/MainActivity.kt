@@ -21,7 +21,6 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.NonCancellable.start
 
-
 class MainActivity : AppCompatActivity() {
     private lateinit var signInEmail: EditText
     private lateinit var signInPassword: EditText
