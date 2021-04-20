@@ -6,16 +6,10 @@ import android.os.Bundle
 import android.text.InputType
 import android.text.TextUtils
 import android.text.method.PasswordTransformationMethod
-import android.util.Patterns
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
-import org.w3c.dom.Text
 
 
 class Register : AppCompatActivity() {
@@ -70,12 +64,12 @@ class Register : AppCompatActivity() {
                 Toast.makeText(this,"wrong",Toast.LENGTH_SHORT).show()
             }
                 else{
-                registeruser(email,password)
+                registerUser(email,password)
             }
         }
     }
 
-    private fun registeruser(email: String, password: String) {
+    private fun registerUser(email: String, password: String) {
     auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this) { task ->
         if (task.isSuccessful) {
             val registerIntent = Intent(this,MainActivity::class.java)

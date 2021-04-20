@@ -3,25 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_favourites">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_favourites"
         android:name="com.example.unishare.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_fav" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_update_profile"
         android:name="com.example.unishare.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_update_profile" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_uploads"
         android:name="com.example.unishare.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_uploads" />
     <fragment
         android:id="@+id/nav_refer"
         android:name="com.example.unishare.ui.refer.ReferFragment"
