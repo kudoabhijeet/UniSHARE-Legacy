@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.113" />
 
     <EditText
-        android:id="@+id/r_email"
+        android:id="@+id/update_email"
         android:layout_width="340dp"
         android:layout_height="60dp"
         android:layout_marginTop="28dp"
