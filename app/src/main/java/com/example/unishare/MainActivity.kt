@@ -60,24 +60,24 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    private fun createUser(email: String, password: String){
-        auth?.createUserWithEmailAndPassword(email, password)
-            ?.addOnCompleteListener(this) { task ->
-                if (!task.isSuccessful) {
-                    if (password.length < 8) {
-                        Toast.makeText(
-                            this,
-                            "Password must be more than 8 digit",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    } else {
-                        Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
-                    }
-                } else {
-                    reload()
-                }
-            }
-    }
+//    private fun createUser(email: String, password: String){
+//        auth?.createUserWithEmailAndPassword(email, password)
+//            ?.addOnCompleteListener(this) { task ->
+//                if (!task.isSuccessful) {
+//                    if (password.length < 8) {
+//                        Toast.makeText(
+//                            this,
+//                            "Password must be more than 8 digit",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                    } else {
+//                        Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
+//                    }
+//                } else {
+//                    reload()
+//                }
+//            }
+//    }
     private fun signInUser(email: String, password: String){
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
