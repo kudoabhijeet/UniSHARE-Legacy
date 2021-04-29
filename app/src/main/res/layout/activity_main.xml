@@ -118,7 +118,7 @@
         android:id="@+id/textView3"
         android:layout_width="24dp"
         android:layout_height="21dp"
-        android:text="OR"
+        android:text="@string/or"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/googleSignIn"
