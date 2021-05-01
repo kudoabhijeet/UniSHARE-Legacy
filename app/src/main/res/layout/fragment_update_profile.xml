@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.gallery.GalleryFragment"
+    tools:context=".ui.UpdateProfile.UpdateProfileFragment"
     android:background="@color/colorAccent">
 
     <TextView
@@ -18,10 +18,9 @@
         android:typeface="sans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintVertical_bias="0.076" />
 
     <EditText
         android:id="@+id/update_name"
@@ -30,7 +29,7 @@
         android:layout_marginTop="25dp"
         android:background="@drawable/roundedcorner"
         android:ems="10"
-        android:hint="Enter Name"
+        android:hint="Enter New Name"
         android:inputType="textPersonName"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
@@ -38,19 +37,19 @@
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/update_profile_header"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/update_Photo"
+        app:layout_constraintVertical_bias="0.03" />
 
     <EditText
         android:id="@+id/update_email"
         android:layout_width="340dp"
         android:layout_height="60dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/roundedcorner"
         android:ems="10"
-        android:hint="Enter email"
+        android:hint="Enter new Email"
         android:inputType="textEmailAddress"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
@@ -60,7 +59,7 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_name"
-        app:layout_constraintVertical_bias="0.091" />
+        />
 
     <EditText
         android:id="@+id/update_password"
@@ -87,12 +86,24 @@
         android:layout_width="110dp"
         android:layout_height="62dp"
         android:backgroundTint="@color/white"
-        android:text="Save"
+        android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_password"
-        app:layout_constraintVertical_bias="0.121" />
+        app:layout_constraintVertical_bias="0.4" />
+
+    <ImageView
+        android:id="@+id/update_Photo"
+        android:layout_width="94dp"
+        android:layout_height="99dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_profile_header"
+        app:layout_constraintVertical_bias="0.038"
+        tools:src="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

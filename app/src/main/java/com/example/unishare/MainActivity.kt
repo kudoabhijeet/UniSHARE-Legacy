@@ -14,12 +14,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.NonCancellable.start
 
 class MainActivity : AppCompatActivity() {
     private lateinit var signInEmail: EditText
@@ -27,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var signInButton: Button
     private lateinit var registerButton: Button
     private lateinit var auth: FirebaseAuth
-    val RC_SIGN_IN : Int = 1;
+    val RC_SIGN_IN : Int = 1
     private val TAG = "MainActivity"
     lateinit var signInClient: GoogleSignInClient
     lateinit var signInOptions: GoogleSignInOptions
@@ -46,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
 //                    Log.d(TAG, "signInWithCredential:success")
                     val user = auth.currentUser
-                    Toast.makeText(this, "Logged in as $user", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Logged in as ${user?.displayName}", Toast.LENGTH_SHORT).show()
                     reload()
                 } else {
                     // If sign in fails, display a message to the user.

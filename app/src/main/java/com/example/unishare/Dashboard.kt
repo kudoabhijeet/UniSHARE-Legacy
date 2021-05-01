@@ -18,6 +18,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -88,7 +89,10 @@ class Dashboard : AppCompatActivity() {
         val userid = user!!.uid
         userEmail.text = user.email
         userName.text = user.displayName
-        userPhoto.setImageURI(user.photoUrl)
+        Glide.with(this)
+            .load(user.photoUrl)
+            .into(userPhoto)
+//        userPhoto.setImageURI(user.photoUrl)
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
