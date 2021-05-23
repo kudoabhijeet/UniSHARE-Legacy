@@ -25,7 +25,7 @@ class Register : AppCompatActivity() {
 
         r_email = findViewById(R.id.update_email)
         r_password = findViewById(R.id.r_password)
-        r_confirm = findViewById(R.id.r_confirm)
+        r_confirm = findViewById(R.id.upload_desc)
         r_signUp = findViewById(R.id.signUp)
 
         auth = FirebaseAuth.getInstance()

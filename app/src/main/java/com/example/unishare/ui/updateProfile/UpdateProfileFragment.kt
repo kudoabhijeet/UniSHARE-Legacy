@@ -1,4 +1,4 @@
-package com.example.unishare.ui.UpdateProfile
+package com.example.unishare.ui.updateProfile
 
 import android.content.ContentValues.TAG
 import android.content.Intent
@@ -21,19 +21,13 @@ import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 
 class UpdateProfileFragment : Fragment() {
-    private lateinit var newName : EditText
-    private lateinit var newEmail : EditText
-    private lateinit var newPhoto : ImageView
-    private lateinit var newPassword : EditText
-    private fun updateUserData(user : FirebaseUser?, newName : EditText ){
-    //TODO: user update fields
-
-        val getName = newName.toString().trim()
+    private fun updateUserData(user : FirebaseUser? , newName : EditText){
+        val getName = newName.text.toString()
+        println(getName)
         val profileUpdates = userProfileChangeRequest {
             displayName = getName
 //            photoUri = Uri.parse("https://example.com/jane-q-user/profile.jpg")
         }
-
         user!!.updateProfile(profileUpdates)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -47,12 +41,13 @@ class UpdateProfileFragment : Fragment() {
 
         val view =  inflater.inflate(R.layout.fragment_update_profile, container, false)
         val saveButton = view.findViewById<Button>(R.id.update_button)
-        newName = view.findViewById(R.id.update_name)
-        newEmail = view.findViewById(R.id.update_email)
-        newPhoto = view.findViewById(R.id.update_Photo)
+        var newName = view.findViewById<EditText>(R.id.update_name)
+        val newEmail = view.findViewById<EditText>(R.id.update_email)
+        newEmail.isEnabled = false
+        val newPhoto = view.findViewById<ImageView>(R.id.update_Photo)
 
         val user = Firebase.auth.currentUser
-        if (user != null) {
+        if (user != null ) {
             // User is signed in
             newName.hint = user.displayName
             newEmail.hint = user.email
@@ -71,8 +66,7 @@ class UpdateProfileFragment : Fragment() {
         }
         saveButton.setOnClickListener{
             newName = view.findViewById(R.id.update_name)
-
-            updateUserData(user, newName)
+            updateUserData(user, newName )
         }
         return view
     }

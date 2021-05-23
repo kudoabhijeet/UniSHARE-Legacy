@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/nav_update_profile"
-        android:name="com.example.unishare.ui.UpdateProfile.UpdateProfileFragment"
+        android:name="com.example.unishare.ui.updateProfile.UpdateProfileFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_update_profile" />
 
