@@ -7,10 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.unishare.MainActivity
@@ -21,6 +18,7 @@ import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 
 class UpdateProfileFragment : Fragment() {
+    private lateinit var updateProgressBar : ProgressBar
     private fun updateUserData(user : FirebaseUser? , newName : EditText){
         val getName = newName.text.toString()
         println(getName)
@@ -28,9 +26,12 @@ class UpdateProfileFragment : Fragment() {
             displayName = getName
 //            photoUri = Uri.parse("https://example.com/jane-q-user/profile.jpg")
         }
+
         user!!.updateProfile(profileUpdates)
+
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
+                    updateProgressBar.visibility = View.INVISIBLE
                     Log.d(TAG, "User profile updated.")
                 }
             }
@@ -42,6 +43,7 @@ class UpdateProfileFragment : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_update_profile, container, false)
         val saveButton = view.findViewById<Button>(R.id.update_button)
         var newName = view.findViewById<EditText>(R.id.update_name)
+        updateProgressBar = view.findViewById<ProgressBar>(R.id.profileUpdateBar)
         val newEmail = view.findViewById<EditText>(R.id.update_email)
         newEmail.isEnabled = false
         val newPhoto = view.findViewById<ImageView>(R.id.update_Photo)
@@ -66,6 +68,7 @@ class UpdateProfileFragment : Fragment() {
         }
         saveButton.setOnClickListener{
             newName = view.findViewById(R.id.update_name)
+            updateProgressBar.visibility = View.VISIBLE
             updateUserData(user, newName )
         }
         return view

@@ -32,37 +32,7 @@ class Dashboard : AppCompatActivity() {
 //    var storageRef = storage.reference
 //    val PICK_IMAGE_REQUEST = 71
     private lateinit var appBarConfiguration: AppBarConfiguration
-//
-//    private fun uploadNewFile(){
-//        val intent = Intent()
-//        intent.type = "image/*"
-//        intent.action = Intent.ACTION_GET_CONTENT
-//        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
-//    }
-//
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-////
-//        if (requestCode === PICK_IMAGE_REQUEST && resultCode === RESULT_OK && attr.data != null && attr.data != null) {
-//            val filePath = data!!.data!!
-//            val riversRef = storageRef.child("images/${filePath.lastPathSegment}")
-//            var uploadTask = riversRef.putFile(filePath)
-//
-////        var file = Uri.fromFile(filePath)
-//
-//
-//// Register observers to listen for when the download is done or if it fails
-//            uploadTask.addOnFailureListener {
-//                // Handle unsuccessful uploads
-//                Toast.makeText(this, "Failed", Toast.LENGTH_SHORT)
-//            }.addOnSuccessListener { taskSnapshot ->
-//                // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
-//                Toast.makeText(this, "Done", Toast.LENGTH_SHORT)
-//                // ...
-//            }
-//        }
-//
-//    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
@@ -100,7 +70,7 @@ class Dashboard : AppCompatActivity() {
             setOf(
                 R.id.nav_favourites,
                 R.id.nav_update_profile,
-                R.id.nav_uploads,
+//                R.id.nav_uploads,
                 R.id.nav_refer,
                 R.id.nav_logout
             ), drawerLayout
@@ -119,6 +89,13 @@ class Dashboard : AppCompatActivity() {
         if(item.itemId == R.id.action_settings){
             Log.i(Tag, "Logout")
             auth.signOut()
+            val logoutIntent = Intent(this, MainActivity::class.java)
+            logoutIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(logoutIntent)
+        }
+        else if(item.itemId == R.id.action_github){
+            Log.i(Tag, "Contact Developer")
+//            auth.signOut()
             val logoutIntent = Intent(this, MainActivity::class.java)
             logoutIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(logoutIntent)

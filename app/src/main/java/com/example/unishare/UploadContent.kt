@@ -36,7 +36,7 @@ class UploadContent : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK) {
             val filePath = data!!.data!!
-            val storageReference = storageRef.child("images/${filePath.lastPathSegment}")
+            val storageReference = storageRef.child("uploads/${filePath.lastPathSegment}")
             val uploadTask = storageReference.putFile(filePath)
 
 // Register observers to listen for when the download is done or if it fails
@@ -44,10 +44,9 @@ class UploadContent : AppCompatActivity() {
                 // Handle unsuccessful uploads
                 Toast.makeText(this, "Failed to Upload File to Cloud", Toast.LENGTH_SHORT).show()
             }.addOnSuccessListener { taskSnapshot ->
-                // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
-                // Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show()
+
                 fileURl = taskSnapshot.uploadSessionUri.toString()
-                chooseFileButton.text = "Uploaded"
+                chooseFileButton.text = getString(R.string.file_upload)
                 postNow.isEnabled = true
 
             }
@@ -69,12 +68,12 @@ class UploadContent : AppCompatActivity() {
                 call: Call<List<PostItem>?>,
                 response: Response<List<PostItem>?>
             ) {
-                Toast.makeText(this@UploadContent,"Posted!", Toast.LENGTH_SHORT)
+                Toast.makeText(this@UploadContent,"Posted!", Toast.LENGTH_SHORT).show()
 
             }
 
             override fun onFailure(call: Call<List<PostItem>?>, t: Throwable) {
-                Toast.makeText(this@UploadContent,"Failed to Post!", Toast.LENGTH_SHORT)
+                Toast.makeText(this@UploadContent,"Failed to Post!", Toast.LENGTH_SHORT).show()
             }
         })
     }
