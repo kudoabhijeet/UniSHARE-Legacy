@@ -56,40 +56,19 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-//    private fun createUser(email: String, password: String){
-//        auth?.createUserWithEmailAndPassword(email, password)
-//            ?.addOnCompleteListener(this) { task ->
-//                if (!task.isSuccessful) {
-//                    if (password.length < 8) {
-//                        Toast.makeText(
-//                            this,
-//                            "Password must be more than 8 digit",
-//                            Toast.LENGTH_SHORT
-//                        ).show()
-//                    } else {
-//                        Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
-//                    }
-//                } else {
-//                    reload()
-//                }
-//            }
-//    }
+
     private fun signInUser(email: String, password: String){
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-//                    val user = auth.currentUser
                     reload()
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w("signInWithEmail:failure", task.exception)
                     Toast.makeText(baseContext, "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
-                    // ...
                 }
 
-                // ...
             }
     }
     // all about google signin

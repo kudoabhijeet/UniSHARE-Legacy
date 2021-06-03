@@ -7,9 +7,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".UploadContent"></activity>
@@ -18,7 +18,8 @@
             android:label="Register" />
         <activity
             android:name=".Dashboard"
-            android:label="@string/title_activity_dashboard" />
+            android:label="@string/title_activity_dashboard"
+           />
         <activity
             android:name=".MainActivity"
             android:theme="@style/SplashTheme">

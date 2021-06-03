@@ -18,5 +18,6 @@
     <string name="file_upload">File Uploaded</string>
     <string name="post_title"></string>
     <string name="post_desc"></string>
+    <string name="action_1">Download</string>
 
 </resources>

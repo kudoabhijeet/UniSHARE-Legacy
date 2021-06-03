@@ -1,6 +1,7 @@
 package com.example.unishare
 
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,15 +14,17 @@ class FeedAdapter(val context : Context, val posts : List<PostItem>?) : Adapter<
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
         var title : TextView
         var desc : TextView
+
         init {
             title = view.findViewById(R.id.post_title)
             desc = view.findViewById(R.id.post_desc)
+
         }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        var view = LayoutInflater.from(context).inflate(R.layout.item_row, parent, false )
+        val view = LayoutInflater.from(context).inflate(R.layout.item_row, parent, false )
         return ViewHolder(view)
     }
 
